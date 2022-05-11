@@ -43,16 +43,8 @@ public class ElGamal {
     }
 
 
+    // Creating a random public key, for which we don't know the private key for
     public FakeKey generateRandomPublicKey(BCElGamalPublicKey pubKey) {
-        // get the generator and prime modulus used for the original key
-        // and create a random public key from the group elements, mocking
-        // the ElGamalKeyPairGenerator class
-        // min = 2 max = p-2
-        // https://crypto.stackexchange.com/questions/16196/what-is-a-generator
-        // I just need a random number between 0 and p because the elgamal key genration is
-        // g^privatekey mod p so I don't know the private key, therefore just pick a random
-        // number between 0 and p-1
-        // why two and minus two????
         BigInteger g = pubKey.getParameters().getG();
         BigInteger p = pubKey.getParameters().getP();
         BigInteger pMinusOne = p.subtract(BigInteger.ONE);
