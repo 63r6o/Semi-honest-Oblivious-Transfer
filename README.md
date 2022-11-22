@@ -23,11 +23,11 @@ described in [Evans18 [1]](#1).
     ***S***. Otherwise (if $\textit{b} = 1$), ***R***
     sends a pair (*pk, pk'*) to ***S***
 
-2.  ***S*** receives ($pk_0, pk_1$) and sends back to
+2.  ***S*** receives ( $pk_0, pk_1$ ) and sends back to
     ***R*** two encryptions
-    $e_0 = \textsf{Enc}_{pk_0} (X_0), e_1 = \textsf{Enc}_{pk_1} (X_1)$.
+    $e_0 = ENC_{pk_0} (X_0), e_1 = ENC_{pk_1} (X_1)$.
 
-3.  ***R*** receives ($e_0, e_1$) and decrypts the ciphertext
+3.  ***R*** receives ( $e_0, e_1$ ) and decrypts the ciphertext
     $e_b$ using *sk*. ***R*** is unable to decrypt the second
     ciphertext as it does not have the corresponding secret key.
 
@@ -149,12 +149,12 @@ public byte[][] getEncrypted(PublicKey[] publicKeys)
 ```
 
 which basically returns $e_0, e_1$ where
-$e_0 = \textsf{Enc}_{pk_0} (X_0), e_1 = \textsf{Enc}_{pk_1} (X_1)$.
+$e_0 = ENC_{pk_0} (X_0), e_1 = ENC_{pk_1} (X_1)$.
 
 ### Client.java
 
 The client class will initialize our Sender with two String inputs
-($X_1, X_2$) from the user. ***After we have our Sender object***, the
+( $X_1, X_2$ ) from the user. ***After we have our Sender object***, the
 client will connect to our Server using a java socket. From here the
 flow of the protocol is this:
 
